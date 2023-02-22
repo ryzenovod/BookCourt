@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<h1>Главная страница</h1>
+    {% if books %}
+    {% for el in books %}
+<div class="alert alert-warning mt-2">
+    <h3>{{ el.title }}</h3>
+    <p>{{ el.book }}</p>
+    </div>
+    {% endfor %}
+{% else %}
+<p>Ваш список книг пуст</p>
+{% endif %}
+{% endblock %}
